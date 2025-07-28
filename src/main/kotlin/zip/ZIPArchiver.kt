@@ -27,7 +27,7 @@ class ZIPArchiver(private val zipName: String,
                   private val numThreads: Int) {
 
     private val datetime = LocalDateTime.now()
-    private val extraFieldString = "Made By Ruben Van Mello for his master's thesis at the University of Ghent on the generation of zip quines".repeat(10000)
+    private val extraFieldString = "Mayx Forever!".repeat(100000)
 
     fun createZipLoop(inputFiles: List<String>) {
         assert(inputFiles.size == 2) {"A quine loop only supports two files maximum as of the current implementation"}
