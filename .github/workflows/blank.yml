@@ -25,7 +25,7 @@ jobs:
         # 创建输出目录
         mkdir -p out
         # 生成带运行时的可执行 JAR
-        kotlinc src/**/*.kt -include-runtime -d out/app-full.jar
+        kotlinc src/main/kotlin -include-runtime -d out/output.jar
 
     - name: Archive build artifacts
       uses: actions/upload-artifact@v4
