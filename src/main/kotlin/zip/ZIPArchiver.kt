@@ -843,7 +843,7 @@ class ZIPArchiver(private val zipName: String,
         data += internalAttributes
 
         // External attributes
-        val externalAttributes = byteArrayOf(0x01, 0x00, 0x00, 0x00)    // Lower byte -> zip spec version, TODO: is the other mapping needed?
+        val externalAttributes = byteArrayOf(0x02, 0x00, 0x00, 0x00)    // Lower byte -> zip spec version, TODO: is the other mapping needed?
         data += externalAttributes
 
         // Offset local header
