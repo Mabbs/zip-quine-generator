@@ -26,15 +26,16 @@ class ZIPArchiver(private val zipName: String,
                   private val noCrc: Boolean,
                   private val numThreads: Int) {
 
-    private val datetime = LocalDateTime.now()
+    // private val datetime = LocalDateTime.now()
+    private val datetime = LocalDateTime.of(2000, 7, 28, 0, 0)
     private val extraFieldString = "Mayx Forever!".repeat(100000)
 
     fun createZipLoop(inputFiles: List<String>) {
         assert(inputFiles.size == 2) {"A quine loop only supports two files maximum as of the current implementation"}
 
-        val zipNames = inputFiles.map { it.substringBeforeLast('.').substringAfterLast('/') + ".zip" }
-        val zipName = zipNames[0]
-        val zipName2 = zipNames[1]
+        // val zipNames = inputFiles.map { it.substringBeforeLast('.').substringAfterLast('/') + ".zip" }
+        val zipName = "Code.zip"
+        val zipName2 = "Mabbs.zip"
         val zip = File(zipName2)
         // Clear zip file
         zip.writeBytes(byteArrayOf())
@@ -842,7 +843,7 @@ class ZIPArchiver(private val zipName: String,
         data += internalAttributes
 
         // External attributes
-        val externalAttributes = byteArrayOf(0x02, 0x00, 0x00, 0x00)    // Lower byte -> zip spec version, TODO: is the other mapping needed?
+        val externalAttributes = byteArrayOf(0x01, 0x00, 0x00, 0x00)    // Lower byte -> zip spec version, TODO: is the other mapping needed?
         data += externalAttributes
 
         // Offset local header
@@ -895,7 +896,7 @@ class ZIPArchiver(private val zipName: String,
         // Offset of the start of the central directory on the disk on which the central directory starts
         data += getByteArrayOf4Bytes(offset)
 
-        val comment = ""
+        val comment = "Mayx Forever!"
         // Comment length
         data += getByteArrayOf2Bytes(comment.length)
 
