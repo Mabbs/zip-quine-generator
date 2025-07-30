@@ -896,7 +896,7 @@ class ZIPArchiver(private val zipName: String,
         // Offset of the start of the central directory on the disk on which the central directory starts
         data += getByteArrayOf4Bytes(offset)
 
-        val comment = "Mayx Forever!"
+        val comment = ""
         // Comment length
         data += getByteArrayOf2Bytes(comment.length)
 
