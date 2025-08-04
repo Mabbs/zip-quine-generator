@@ -34,7 +34,7 @@ class ZIPArchiver(private val zipName: String,
         assert(inputFiles.size == 2) {"A quine loop only supports two files maximum as of the current implementation"}
 
         // val zipNames = inputFiles.map { it.substringBeforeLast('.').substringAfterLast('/') + ".zip" }
-        val zipName = "Code.zip"
+        val zipName = "Code/Code.zip"
         val zipName2 = "Mabbs.zip"
         val zip = File(zipName2)
         // Clear zip file
@@ -843,7 +843,7 @@ class ZIPArchiver(private val zipName: String,
         data += internalAttributes
 
         // External attributes
-        val externalAttributes = byteArrayOf(0x02, 0x00, 0x00, 0x00)    // Lower byte -> zip spec version, TODO: is the other mapping needed?
+        val externalAttributes = byteArrayOf(0x01, 0x00, 0x00, 0x00)    // Lower byte -> zip spec version, TODO: is the other mapping needed?
         data += externalAttributes
 
         // Offset local header
