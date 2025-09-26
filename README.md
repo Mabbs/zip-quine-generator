@@ -10,6 +10,7 @@ This project explores the creation of recursive and "loopy" zip files — unique
 - [Features](#features)
 - [Installation](#installation)
 - [Details](#details)
+- [Building a jar](#building-a-jar)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -62,12 +63,22 @@ Before my thesis, there were only a handfull examples to find of normal recursiv
 As an extension, I explored the the possibility of loopy zip files, which were not found previously. We believe this is the first time this was done and it came with a lot of challenges.
 Because of this achievement, my supervisor suggested to publish this as an article. The full explanation of how these files were created can be read in the journal: https://www.mdpi.com/2076-3417/14/21/9797
 
+## Building a jar
+You can build the jar using maven;
+```
+mvn package -DskipTests
+```
+
 ## Contributing
 1. Fork the repository.
 2. Create a new branch (git checkout -b feature/YourFeature).
 3. Commit your changes (git commit -am 'Add new feature').
 4. Push to the branch (git push origin feature/YourFeature).
 5. Create a new Pull Request.
+
+## Contributors
+Massive thanks to the contributors of the project. You deserve a special mention here from the bottom of my heart:
+- NateChoe1
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
